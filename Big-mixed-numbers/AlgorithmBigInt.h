@@ -144,6 +144,7 @@ QR preDivide(string a, string b) // phép chia nhanh 2 số gần bằng nhau ( 
 QR divide(string a, string b){
     // O(n^2) ý tưởng dựa vào phép chia tay
     int i=b.size();
+    if(b == "1") return QR(a,"0");
     if(cmp(a,b)== -1) return QR("0",a);
     string x(a.begin(),a.begin()+ i),res; // lấy trước x sao cho x.size = b.size
     //cout<<x<<endl;
@@ -151,6 +152,7 @@ QR divide(string a, string b){
     x= qr.second;
     res+= qr.first;
     while(i != a.size()){ // lấy x
+        if(x=="0") x= string();
         x+= a[i++];
         qr= preDivide(x,b);
         x= qr.second;

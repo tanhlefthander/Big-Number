@@ -90,7 +90,7 @@ public:
         return false;
     }
     bool operator <= (BigInt b){
-        if(pon != b.pon) return pon> b.pon; // '+' < '-'
+        if(pon != b.pon) return pon> b.pon;
         int i = cmp(bigInt, b.bigInt);
         if(i==0) return true;
         if(pon == '+' && i<0) return true;
@@ -98,7 +98,7 @@ public:
         return false;
     }
     bool operator >= (BigInt b){
-        if(pon != b.pon) return pon< b.pon; // '+' < '-'
+        if(pon != b.pon) return pon< b.pon;
         int i = cmp(bigInt, b.bigInt);
         if(i==0) return true;
         if(pon == '+' && i>0) return true;
@@ -195,6 +195,9 @@ public:
         //out<<b.pon;
         out<<b.bigInt;
         return out;
+    }
+    BigInt abs(){
+        return bigInt;
     }
     friend istream & operator >> (istream &in, BigInt &b){
         string s;
