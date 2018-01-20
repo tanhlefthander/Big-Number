@@ -111,7 +111,7 @@ public:
         return out;
     }
 };
-BigFraction getFromDouble(string a) // a chức sâu kiểu double : 35345.565
+BigFraction getFromDouble(string a) // a chức xâu kiểu double : 35345.565
 {
     int i;
     for( i=0 ;i< a.size(); i++) if(a[i]=='.') break; // trả về vị trí dấu '.'
